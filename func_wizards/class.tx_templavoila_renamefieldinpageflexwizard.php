@@ -260,5 +260,3 @@ class tx_templavoila_renameFieldInPageFlexWizard extends t3lib_extobjbase {
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/templavoila/func_wizards/class.tx_templavoila_renamefieldinpageflexwizard.php']) {
 	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/templavoila/func_wizards/class.tx_templavoila_renamefieldinpageflexwizard.php']);
 }
-
-?>

@@ -2781,4 +2781,3 @@ $SOBE = t3lib_div::makeInstance('tx_templavoila_cm1');
 $SOBE->init();
 $SOBE->main();
 $SOBE->printContent();
-?>
