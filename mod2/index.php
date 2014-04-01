@@ -398,8 +398,8 @@ class tx_templavoila_module2 extends t3lib_SCbase {
 
 		// Create setting handlers:
 		$settings = '<p>' .
-			t3lib_BEfunc::getFuncCheck('', 'SET[set_details]', $this->MOD_SETTINGS['set_details'], '', t3lib_div::implodeArrayForUrl('', $_GET, '', 1, 1), 'id="set_details"') . $showDetails .
-			t3lib_BEfunc::getFuncCheck('', 'SET[set_unusedDs]', $this->MOD_SETTINGS['set_unusedDs'], '', t3lib_div::implodeArrayForUrl('', $_GET, '', 1, 1), 'id="set_unusedDs"') . $showUnused .
+			t3lib_BEfunc::getFuncCheck('', 'SET[set_details]', $this->MOD_SETTINGS['set_details'], 'index.php', t3lib_div::implodeArrayForUrl('', $_GET, '', 1, 1), 'id="set_details"') . $showDetails .
+			t3lib_BEfunc::getFuncCheck('', 'SET[set_unusedDs]', $this->MOD_SETTINGS['set_unusedDs'], 'index.php', t3lib_div::implodeArrayForUrl('', $_GET, '', 1, 1), 'id="set_unusedDs"') . $showUnused .
 			'</p>';
 
 		// Add output:
