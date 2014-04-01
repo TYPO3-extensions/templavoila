@@ -55,7 +55,7 @@ class tx_templavoila_cm1 {
 
 		$localItems = array();
 		if (!$backRef->cmLevel) {
-			$LL = $LANG->includeLLFile(t3lib_extMgm::extPath('templavoila') . 'resources/Private/Language/locallang.xml', 0);
+			$LL = $LANG->includeLLFile(t3lib_extMgm::extPath('templavoila') . 'Resources/Private/Language/locallang.xml', 0);
 
 			// Adding link for Mapping tool:
 			if (tx_templavoila_file::is_file($table)) {

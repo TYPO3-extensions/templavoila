@@ -71,7 +71,7 @@ class tx_templavoila_cm2 extends t3lib_SCbase {
 		$this->doc = t3lib_div::makeInstance('template');
 		$this->doc->docType = 'xhtml_trans';
 		$this->doc->backPath = $BACK_PATH;
-		$this->doc->setModuleTemplate('EXT:templavoila/resources/templates/cm2_default.html');
+		$this->doc->setModuleTemplate('EXT:templavoila/Resources/templates/cm2_default.html');
 		$this->doc->bodyTagId = 'typo3-mod-php';
 		$this->doc->divClass = '';
 

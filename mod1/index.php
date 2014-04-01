@@ -301,11 +301,11 @@ class tx_templavoila_module1 extends t3lib_SCbase {
 			$this->doc = t3lib_div::makeInstance('template');
 			$this->doc->backPath = $BACK_PATH;
 
-			$templateFile = t3lib_extMgm::extPath($this->extKey) . 'resources/templates/mod1_' . substr(TYPO3_version, 0, 3) . '.html';
+			$templateFile = t3lib_extMgm::extPath($this->extKey) . 'Resources/templates/mod1_' . substr(TYPO3_version, 0, 3) . '.html';
 			if (file_exists($templateFile)) {
-				$this->doc->setModuleTemplate('EXT:templavoila/resources/templates/mod1_' . substr(TYPO3_version, 0, 3) . '.html');
+				$this->doc->setModuleTemplate('EXT:templavoila/Resources/templates/mod1_' . substr(TYPO3_version, 0, 3) . '.html');
 			} else {
-				$this->doc->setModuleTemplate('EXT:templavoila/resources/templates/mod1_default.html');
+				$this->doc->setModuleTemplate('EXT:templavoila/Resources/templates/mod1_default.html');
 			}
 
 			$this->doc->docType = 'xhtml_trans';
@@ -315,11 +315,11 @@ class tx_templavoila_module1 extends t3lib_SCbase {
 			$this->doc->form = '<form action="' . htmlspecialchars('index.php?' . $this->link_getParameters()) . '" method="post">';
 
 			// Add custom styles
-			$styleSheetFile = t3lib_extMgm::extPath($this->extKey) . 'resources/styles/mod1_' . substr(TYPO3_version, 0, 3) . '.css';
+			$styleSheetFile = t3lib_extMgm::extPath($this->extKey) . 'Resources/styles/mod1_' . substr(TYPO3_version, 0, 3) . '.css';
 			if (file_exists($styleSheetFile)) {
-				$styleSheetFile = t3lib_extMgm::extRelPath($this->extKey) . 'resources/styles/mod1_' . substr(TYPO3_version, 0, 3) . '.css';
+				$styleSheetFile = t3lib_extMgm::extRelPath($this->extKey) . 'Resources/styles/mod1_' . substr(TYPO3_version, 0, 3) . '.css';
 			} else {
-				$styleSheetFile = t3lib_extMgm::extRelPath($this->extKey) . 'resources/styles/mod1_default.css';
+				$styleSheetFile = t3lib_extMgm::extRelPath($this->extKey) . 'Resources/styles/mod1_default.css';
 			}
 
 			if (isset($this->modTSconfig['properties']['stylesheet'])) {
@@ -532,7 +532,7 @@ class tx_templavoila_module1 extends t3lib_SCbase {
 		} else { // No access or no current page uid:
 			$this->doc = t3lib_div::makeInstance('template');
 			$this->doc->backPath = $BACK_PATH;
-			$this->doc->setModuleTemplate('EXT:templavoila/resources/templates/mod1_noaccess.html');
+			$this->doc->setModuleTemplate('EXT:templavoila/Resources/templates/mod1_noaccess.html');
 			$this->doc->docType = 'xhtml_trans';
 
 			$this->doc->bodyTagId = 'typo3-mod-php';
