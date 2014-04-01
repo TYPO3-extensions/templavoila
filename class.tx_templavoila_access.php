@@ -72,7 +72,7 @@ class tx_templavoila_access {
 					$lang = t3lib_div::makeInstance('language');
 					$lang->init($BE_USER->uc['lang']);
 				}
-				$ref->errorMsg = $lang->sL('LLL:EXT:templavoila/locallang_access.xml:' . $error);
+				$ref->errorMsg = $lang->sL('LLL:EXT:templavoila/resources/Private/Language/locallang_access.xml:' . $error);
 			}
 
 			return FALSE;
