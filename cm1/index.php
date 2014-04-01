@@ -1897,7 +1897,7 @@ class tx_templavoila_cm1 extends t3lib_SCbase {
 				<h3>' . $GLOBALS['LANG']->getLL('mapMappingWindow') . ':</h3>
 			<!-- <p><strong>File:</strong> ' . htmlspecialchars($displayFile) . '</p> -->
 			<p>' .
-				t3lib_BEfunc::getFuncMenu('', 'SET[displayMode]', $this->MOD_SETTINGS['displayMode'], $this->MOD_MENU['displayMode'], '', t3lib_div::implodeArrayForUrl('', $_GET, '', 1, 1)) .
+				t3lib_BEfunc::getFuncMenu('', 'SET[displayMode]', $this->MOD_SETTINGS['displayMode'], $this->MOD_MENU['displayMode'], 'index.php', t3lib_div::implodeArrayForUrl('', $_GET, '', 1, 1)) .
 				$this->cshItem('xMOD_tx_templavoila', 'mapping_window_modes', $this->doc->backPath, '') .
 				'</p>';
 
