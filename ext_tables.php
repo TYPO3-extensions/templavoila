@@ -58,7 +58,7 @@ $TCA['tx_templavoila_tmplobj'] = Array(
 		'default_sortby' => 'ORDER BY title',
 		'delete' => 'deleted',
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
-		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'icon_to.gif',
+		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'resources/Public/Icon/icon_to.gif',
 		'selicon_field' => 'previewicon',
 		'selicon_field_path' => 'uploads/tx_templavoila',
 		'type' => 'parent', // kept to make sure the user is force to reload the form
@@ -79,7 +79,7 @@ $TCA['tx_templavoila_datastructure'] = Array(
 		'default_sortby' => 'ORDER BY title',
 		'delete' => 'deleted',
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'tca.php',
-		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'icon_ds.gif',
+		'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'resources/Public/Icon/icon_ds.gif',
 		'selicon_field' => 'previewicon',
 		'selicon_field_path' => 'uploads/tx_templavoila',
 		'versioningWS' => TRUE,
@@ -178,9 +178,9 @@ $tempColumns = array(
 );
 t3lib_extMgm::addTCAcolumns('tt_content', $tempColumns, 1);
 
-$TCA['tt_content']['ctrl']['typeicons'][$_EXTKEY . '_pi1'] = t3lib_extMgm::extRelPath($_EXTKEY) . '/icon_fce_ce.png';
+$TCA['tt_content']['ctrl']['typeicons'][$_EXTKEY . '_pi1'] = t3lib_extMgm::extRelPath($_EXTKEY) . '/resources/Public/Icon/icon_fce_ce.png';
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes'][$_EXTKEY . '_pi1'] = 'extensions-templavoila-type-fce';
-t3lib_extMgm::addPlugin(array('LLL:EXT:templavoila/resources/Private/Language/locallang_db.xml:tt_content.CType_pi1', $_EXTKEY . '_pi1', 'EXT:' . $_EXTKEY . '/icon_fce_ce.png'), 'CType');
+t3lib_extMgm::addPlugin(array('LLL:EXT:templavoila/resources/Private/Language/locallang_db.xml:tt_content.CType_pi1', $_EXTKEY . '_pi1', 'EXT:' . $_EXTKEY . '/resources/Public/Icon/icon_fce_ce.png'), 'CType');
 
 if ($_EXTCONF['enable.']['selectDataStructure']) {
 	if ($TCA['tt_content']['ctrl']['requestUpdate'] != '') {
@@ -360,7 +360,7 @@ if (TYPO3_MODE == 'BE' ||
 		'clip_ref-release' => t3lib_extMgm::extRelPath('templavoila') . 'mod1/clip_ref_h.gif',
 		'unlink' => t3lib_extMgm::extRelPath('templavoila') . 'mod1/unlink.png',
 		'htmlvalidate' => t3lib_extMgm::extRelPath('templavoila') . 'resources/icons/html_go.png',
-		'type-fce' => t3lib_extMgm::extRelPath('templavoila') . 'icon_fce_ce.png'
+		'type-fce' => t3lib_extMgm::extRelPath('templavoila') . 'resources/Public/Icon/icon_fce_ce.png'
 	);
 	t3lib_SpriteManager::addSingleIcons($icons, $_EXTKEY);
 }
