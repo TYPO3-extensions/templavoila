@@ -359,7 +359,7 @@ if (TYPO3_MODE == 'BE' ||
 		'clip_ref' => t3lib_extMgm::extRelPath('templavoila') . 'mod1/clip_ref.gif',
 		'clip_ref-release' => t3lib_extMgm::extRelPath('templavoila') . 'mod1/clip_ref_h.gif',
 		'unlink' => t3lib_extMgm::extRelPath('templavoila') . 'mod1/unlink.png',
-		'htmlvalidate' => t3lib_extMgm::extRelPath('templavoila') . 'Resources/icons/html_go.png',
+		'htmlvalidate' => t3lib_extMgm::extRelPath('templavoila') . 'Resources/Public/Icon/html_go.png',
 		'type-fce' => t3lib_extMgm::extRelPath('templavoila') . 'Resources/Public/Icon/icon_fce_ce.png'
 	);
 	t3lib_SpriteManager::addSingleIcons($icons, $_EXTKEY);
