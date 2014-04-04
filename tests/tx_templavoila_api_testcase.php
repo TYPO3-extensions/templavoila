@@ -207,6 +207,7 @@ class tx_templavoila_api_testcase extends tx_phpunit_database_testcase {
 	}
 
 	public function test_insertElement_basic_workspaces() {
+		$this->fail('Will be fixed after release of 1.9.0');
 		global $TYPO3_DB, $BE_USER;
 
 		$BE_USER->setWorkspace(-1);
@@ -1486,6 +1487,7 @@ class tx_templavoila_api_testcase extends tx_phpunit_database_testcase {
 	}
 
 	public function test_deleteElement_workspaces() {
+		$this->fail('Will be fixed after release of 1.9.0');
 		global $TYPO3_DB, $BE_USER;
 
 		$BE_USER->setWorkspace(0);
