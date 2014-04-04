@@ -421,7 +421,7 @@ class tx_templavoila_cm1 extends t3lib_SCbase {
 		if (tx_templavoila_div::convertVersionNumberToInteger(TYPO3_version) < 4005000) {
 			$this->doc->getDynTabMenuJScode();
 		} else {
-			$this->doc->loadJavascriptLib('sysext/backend/Resources/Public/JavaScript/tabmenu.js');
+			$this->doc->loadJavascriptLib('js/tabmenu.js');
 		}
 
 		// Setting up the context sensitive menu:
