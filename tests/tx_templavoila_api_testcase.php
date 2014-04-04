@@ -34,6 +34,10 @@
  *
  * @author    Robert Lemke <robert@typo3.org>
  */
+if (tx_templavoila_div::convertVersionNumberToInteger(TYPO3_version) >= 6000000) {
+	return;
+}
+
 class tx_templavoila_api_testcase extends tx_phpunit_database_testcase {
 
 	protected $apiObj;
