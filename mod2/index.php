@@ -2212,6 +2212,11 @@ class tx_templavoila_module2 extends t3lib_SCbase {
 #debug($menuWraps);
 #debug($mouseOver);
 			if ($GMENU) {
+				if (tx_templavoila_div::convertVersionNumberToInteger(TYPO3_version) > 6100000) {
+					$fontLocation = 'typo3/sysext/core/Resources/Private/Font/nimbus.ttf';
+				} else {
+					$fontLocation = 't3lib/fonts/nimbus.ttf';
+				}
 				$typoScript = '
 lib.' . $menuType . ' = HMENU
 lib.' . $menuType . '.entryLevel = ' . $menuTypeEntryLevel . '
@@ -2228,7 +2233,7 @@ lib.' . $menuType . '.1.NO {
 	10.fontColor = #333333
 	10.fontSize = 12
 	10.offset = 15,15
-	10.fontFace = t3lib/fonts/nimbus.ttf
+	10.fontFace = ' . $fontLocation . '
 }
 	';
 

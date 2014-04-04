@@ -468,6 +468,13 @@ class tx_templavoila_cm1_eTypes {
 		// input_g
 		$eTypes['eType']['input_g']['TCEforms']['config'] = $eTypes['eType']['input']['TCEforms']['config'];
 		$eTypes['eType']['input_g']['label'] = $GLOBALS['LANG']->getLL('mapPresets_gHederField');
+
+		if (tx_templavoila_div::convertVersionNumberToInteger(TYPO3_version) > 6100000) {
+			$fontLocation = 'typo3/sysext/install/Resources/Private/Font/vera.ttf';
+		} else {
+			$fontLocation = 't3lib/fonts/vera.ttf';
+		}
+
 		$eTypes['eType']['input_g']['Typoscript'] = '
 10 = IMAGE
 10.file = GIFBUILDER
@@ -478,7 +485,7 @@ backColor = #999999
 	10.text.current = 1
 	10.text.case = upper
 	10.fontColor = #FFCC00
-	10.fontFile =  t3lib/fonts/vera.ttf
+	10.fontFile = ' . $fontLocation . '
 	10.niceText = 0
 	10.offset = 0,14
 	10.fontSize = 14
