@@ -1650,7 +1650,7 @@ class tx_templavoila_module2 extends t3lib_SCbase {
 		/*	$DScontent = array('meta' => $DScontent['meta']);	*/
 
 		$languageMode = '';
-		if (is_array($DScontent['meta'])) {
+		if (isset($DScontent['meta']) && is_array($DScontent['meta'])) {
 			if ($DScontent['meta']['langDisable']) {
 				$languageMode = 'Disabled';
 			} elseif ($DScontent['meta']['langChildren']) {
