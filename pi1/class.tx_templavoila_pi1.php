@@ -275,10 +275,7 @@ class tx_templavoila_pi1 extends tslib_pibase {
 				}
 			}
 
-			$dataValues = is_array($data['data']) ? $data['data'][$sheet][$lKey] : '';
-			if (!is_array($dataValues)) {
-				$dataValues = array();
-			}
+			$dataValues = is_array($dataValues = Tx_Extbase_Reflection_ObjectAccess::getPropertyPath($data, "data.$sheet.$lKey")) ? : array();
 
 			// Init mark up object.
 			$this->markupObj = t3lib_div::makeInstance('tx_templavoila_htmlmarkup');
