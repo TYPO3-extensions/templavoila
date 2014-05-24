@@ -5,6 +5,7 @@
 $extensionPath = t3lib_extMgm::extPath('templavoila');
 $extensionClassesPath = $extensionPath . 'classes/';
 return array(
+	'template' => PATH_typo3 . 'template.php',
 	'tx_templavoila_access' => $extensionPath . 'class.tx_templavoila_access.php',
 	'tx_templavoila_api' => $extensionPath . 'class.tx_templavoila_api.php',
 	'tx_templavoila_cm1' => $extensionPath . 'cm1/index.php',
