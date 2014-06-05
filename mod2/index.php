@@ -134,7 +134,7 @@ class tx_templavoila_module2 extends t3lib_SCbase {
 				}
 			');
 
-			if (tx_templavoila_div::convertVersionNumberToInteger(TYPO3_version) >= 6000000) {
+			if (tx_templavoila_div::convertVersionNumberToInteger(TYPO3_version) >= 6002000) {
 				$this->doc->loadJavascriptLib('sysext/backend/Resources/Public/JavaScript/tabmenu.js');
 			} else {
 				$this->doc->loadJavascriptLib('js/tabmenu.js');
