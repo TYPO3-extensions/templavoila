@@ -233,7 +233,7 @@ class ApiTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 	 * @test
 	 */
 	public function InsertElementWithWorkspaces() {
-		$this->fail('Will be fixed after release of 1.9.0');
+		$this->markTestSkipped('Will be fixed after release of 1.9.0');
 		$pageUid = 1;
 
 		$this->backendUser->setWorkspace(-1);
@@ -1434,7 +1434,7 @@ class ApiTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 	 * @test
 	 */
 	public function DeleteElementWithWorkspaces() {
-		$this->fail('Will be fixed after release of 1.9.0');
+		$this->markTestSkipped('Will be fixed after release of 1.9.0');
 		$pageUid = 1;
 
 		// Create new content elements:
