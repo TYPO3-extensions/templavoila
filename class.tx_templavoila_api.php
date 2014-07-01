@@ -283,15 +283,13 @@ class tx_templavoila_api {
 	 * @return mixed UID of the created copy, otherwise FALSE
 	 */
 	public function localizeElement($sourcePointer, $languageKey) {
-		global $TCA;
-
 		if ($this->debug) {
 			t3lib_div::devLog('API: localizeElement()', 'templavoila', 0, array('sourcePointer' => $sourcePointer, 'languageKey' => $languageKey));
 		}
 
 		$sourceElementRecord = $this->flexform_getRecordByPointer($sourcePointer);
 		$parentPageRecord = t3lib_beFunc::getRecordWSOL('pages', $sourceElementRecord['pid']);
-		$rawPageDataStructureArr = t3lib_BEfunc::getFlexFormDS($TCA['pages']['columns']['tx_templavoila_flex']['config'], $parentPageRecord, 'pages');
+		$rawPageDataStructureArr = t3lib_BEfunc::getFlexFormDS($GLOBALS['TCA']['pages']['columns']['tx_templavoila_flex']['config'], $parentPageRecord, 'pages');
 
 		if (!is_array($rawPageDataStructureArr)) {
 			return FALSE;
@@ -1244,8 +1242,6 @@ class tx_templavoila_api {
 	 * @return mixed Either the field name relating to the given column number or FALSE if all fall back methods failed and no suitable field could be found.
 	 */
 	public function ds_getFieldNameByColumnPosition($contextPageUid, $columnPosition) {
-		global $TCA;
-
 		$foundFieldName = FALSE;
 		$columnsAndFieldNamesArr = array();
 		$fieldNameOfFirstCEField = NULL;
@@ -1335,10 +1331,8 @@ class tx_templavoila_api {
 	 * @return array The data structure, expanded for all sheets inside.
 	 */
 	public function ds_getExpandedDataStructure($table, $row) {
-		global $TCA;
-
 		t3lib_div::loadTCA($table);
-		$conf = $TCA[$table]['columns']['tx_templavoila_flex']['config'];
+		$conf = $GLOBALS['TCA'][$table]['columns']['tx_templavoila_flex']['config'];
 		$dataStructureArr = t3lib_BEfunc::getFlexFormDS($conf, $row, $table);
 
 		$expandedDataStructureArr = array();
@@ -1375,8 +1369,6 @@ class tx_templavoila_api {
 	 * @return mixed Array of Template Object records or FALSE if an error occurred.
 	 */
 	public function ds_getAvailablePageTORecords($pageUid) {
-		global $TYPO3_DB;
-
 		$storageFolderPID = $this->getStorageFolderPid($pageUid);
 
 		$tTO = 'tx_templavoila_tmplobj';
@@ -1448,8 +1440,6 @@ class tx_templavoila_api {
 	 * @return array The content tree
 	 */
 	protected function getContentTree_element($table, $row, &$tt_content_elementRegister, $prevRecList = '', $depth = 0) {
-		global $TCA, $LANG;
-
 		$alttext = t3lib_BEfunc::getRecordIconAltText($row, $table);
 		$tree = array();
 		$tree['el'] = array(
@@ -1477,7 +1467,7 @@ class tx_templavoila_api {
 		if ($table == 'pages' || $table == $this->rootTable || ($table == 'tt_content' && $row['CType'] == 'templavoila_pi1')) {
 
 			t3lib_div::loadTCA($table);
-			$rawDataStructureArr = t3lib_BEfunc::getFlexFormDS($TCA[$table]['columns']['tx_templavoila_flex']['config'], $row, $table);
+			$rawDataStructureArr = t3lib_BEfunc::getFlexFormDS($GLOBALS['TCA'][$table]['columns']['tx_templavoila_flex']['config'], $row, $table);
 			$expandedDataStructureArr = $this->ds_getExpandedDataStructure($table, $row);
 
 			switch ($table) {
@@ -1627,8 +1617,6 @@ class tx_templavoila_api {
 	 * @return array The sub tree for these elements
 	 */
 	protected function getContentTree_processSubContent($listOfSubElementUids, &$tt_content_elementRegister, $prevRecList, $depth = 0) {
-		global $TCA;
-
 		// Init variable:
 		$subTree = array();
 
@@ -1648,7 +1636,7 @@ class tx_templavoila_api {
 					$tt_content_elementRegister[$recIdent['id']]++;
 					$subTree['el'][$idStr] = $this->getContentTree_element('tt_content', $nextSubRecord, $tt_content_elementRegister, $prevRecList . ',' . $idStr, $depth + 1);
 					$subTree['el'][$idStr]['el']['index'] = $counter;
-					$subTree['el'][$idStr]['el']['isHidden'] = $TCA['tt_content']['ctrl']['enablecolumns']['disabled'] && $nextSubRecord[$TCA['tt_content']['ctrl']['enablecolumns']['disabled']];
+					$subTree['el'][$idStr]['el']['isHidden'] = $GLOBALS['TCA']['tt_content']['ctrl']['enablecolumns']['disabled'] && $nextSubRecord[$GLOBALS['TCA']['tt_content']['ctrl']['enablecolumns']['disabled']];
 					$subTree['el_list'][$counter] = $idStr;
 					$counter++;
 				} else {
@@ -1673,8 +1661,6 @@ class tx_templavoila_api {
 	 * @see getContentTree_element()
 	 */
 	protected function getContentTree_getLocalizationInfoForElement($contentTreeArr, &$tt_content_elementRegister) {
-		global $TYPO3_DB;
-
 		$localizationInfoArr = array();
 		if ($contentTreeArr['el']['table'] == 'tt_content' && $contentTreeArr['el']['sys_language_uid'] <= 0) {
 
@@ -1842,8 +1828,6 @@ class tx_templavoila_api {
 	 * @return void
 	 */
 	public function loadWebsiteLanguages() {
-		global $TYPO3_DB;
-
 		$this->allSystemWebsiteLanguages = array();
 		$this->allSystemWebsiteLanguages['all_lKeys'][] = 'lDEF';
 		$this->allSystemWebsiteLanguages['all_vKeys'][] = 'vDEF';
