@@ -1373,7 +1373,7 @@ class tx_templavoila_api {
 
 		$tTO = 'tx_templavoila_tmplobj';
 		$tDS = 'tx_templavoila_datastructure';
-		$res = $TYPO3_DB->exec_SELECTquery(
+		$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 			"$tTO.*",
 			"$tTO LEFT JOIN $tDS ON $tTO.datastructure = $tDS.uid",
 			"$tTO.pid=" . intval($storageFolderPID) . " AND $tDS.scope=1" .
@@ -1385,7 +1385,7 @@ class tx_templavoila_api {
 		}
 
 		$templateObjectRecords = array();
-		while (FALSE != ($row = $TYPO3_DB->sql_fetch_assoc($res))) {
+		while (FALSE != ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))) {
 			$templateObjectRecords[$row['uid']] = $row;
 		}
 
@@ -1504,9 +1504,9 @@ class tx_templavoila_api {
 				$tree['sub'][$sheetKey] = array();
 				$tree['contentFields'][$sheetKey] = array();
 				$tree['meta'][$sheetKey] = array(
-					'title' => (is_array($sheetData) && $sheetData['ROOT']['TCEforms']['sheetTitle'] ? $LANG->sL($sheetData['ROOT']['TCEforms']['sheetTitle']) : ''),
-					'description' => (is_array($sheetData) && $sheetData['ROOT']['TCEforms']['sheetDescription'] ? $LANG->sL($sheetData['ROOT']['TCEforms']['sheetDescription']) : ''),
-					'short' => (is_array($sheetData) && $sheetData['ROOT']['TCEforms']['sheetShortDescr'] ? $LANG->sL($sheetData['ROOT']['TCEforms']['sheetShortDescr']) : ''),
+					'title' => (is_array($sheetData) && $sheetData['ROOT']['TCEforms']['sheetTitle'] ? $GLOBALS['LANG']->sL($sheetData['ROOT']['TCEforms']['sheetTitle']) : ''),
+					'description' => (is_array($sheetData) && $sheetData['ROOT']['TCEforms']['sheetDescription'] ? $GLOBALS['LANG']->sL($sheetData['ROOT']['TCEforms']['sheetDescription']) : ''),
+					'short' => (is_array($sheetData) && $sheetData['ROOT']['TCEforms']['sheetShortDescr'] ? $GLOBALS['LANG']->sL($sheetData['ROOT']['TCEforms']['sheetShortDescr']) : ''),
 				);
 
 				// Traverse the sheet's elements:
@@ -1668,7 +1668,7 @@ class tx_templavoila_api {
 			$fakeElementRow = array('uid' => $contentTreeArr['el']['uid'], 'pid' => $contentTreeArr['el']['pid']);
 			t3lib_beFunc::fixVersioningPID('tt_content', $fakeElementRow);
 
-			$res = $TYPO3_DB->exec_SELECTquery(
+			$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
 				'*',
 				'tt_content',
 				'pid=' . $fakeElementRow['pid'] .
@@ -1678,7 +1678,7 @@ class tx_templavoila_api {
 			);
 
 			$attachedLocalizations = array();
-			while (TRUE == ($olrow = $TYPO3_DB->sql_fetch_assoc($res))) {
+			while (TRUE == ($olrow = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res))) {
 				t3lib_BEfunc::workspaceOL('tt_content', $olrow);
 				if (!isset($attachedLocalizations[$olrow['sys_language_uid']])) {
 					$attachedLocalizations[$olrow['sys_language_uid']] = $olrow['uid'];
@@ -1833,7 +1833,7 @@ class tx_templavoila_api {
 		$this->allSystemWebsiteLanguages['all_vKeys'][] = 'vDEF';
 
 		// Select all website languages:
-		$this->allSystemWebsiteLanguages['rows'] = $TYPO3_DB->exec_SELECTgetRows(
+		$this->allSystemWebsiteLanguages['rows'] = $GLOBALS['TYPO3_DB']->exec_SELECTgetRows(
 			'sys_language.*',
 			'sys_language',
 			'1=1' . t3lib_BEfunc::deleteClause('sys_language'),
