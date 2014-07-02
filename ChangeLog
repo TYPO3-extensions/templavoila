@@ -1,3 +1,7 @@
+2014-07-02 ------- [RELEASE] Release of templavoila 1.9.2
+2014-07-02 fb73422 [BUGFIX] Replace undefined variables with globals
+2014-07-02 925355f [BUGFIX] Temporarily make all methods public again
+
 2014-07-02 ------- [RELEASE] Release of templavoila 1.9.1
 2014-07-02 88caa7e [TASK] Move doc/TODO.txt and remove doc folder
 2014-07-02 07ad5d8 [TASK] Add converted ReST documentation
