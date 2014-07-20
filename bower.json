@@ -1,0 +1,16 @@
+{
+  "name": "templavoila",
+  "homepage": "https://forge.typo3.org/projects/extension-templavoila/",
+  "description": "One of many availabe template engines for TYPO3 CMS",
+  "keywords": [
+    "TYPO3",
+    "CMS",
+    "extension",
+    "templating",
+    "TemplaVoila"
+  ],
+  "authors": [
+    "TemplaVoila Team"
+  ],
+  "license": "GPL-2.0+"
+}
