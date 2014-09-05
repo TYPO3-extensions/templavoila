@@ -44,6 +44,8 @@ class ApiTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 	 * @var array
 	 */
 	protected $testExtensionsToLoad = array(
+		'typo3/sysext/version',
+		'typo3/sysext/workspaces',
 		'typo3conf/ext/static_info_tables',
 		'typo3conf/ext/templavoila'
 	);
@@ -78,6 +80,7 @@ class ApiTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 			'pages',
 			'pages_language_overlay',
 			'sys_template',
+			'sys_workspace',
 			'tx_templavoila_datastructure',
 			'tx_templavoila_tmplobj',
 			'static_languages',
@@ -206,10 +209,9 @@ class ApiTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 	 * @test
 	 */
 	public function InsertElementWithWorkspaces() {
-		$this->markTestSkipped('Will be fixed after release of 1.9.0');
 		$pageUid = 1;
 
-		$this->backendUser->setWorkspace(-1);
+		$this->backendUser->setWorkspace(1);
 
 		// Prepare the new content element:
 		$row = $this->fixture_getContentElementRow_TEXT();
@@ -1407,7 +1409,6 @@ class ApiTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 	 * @test
 	 */
 	public function DeleteElementWithWorkspaces() {
-		$this->markTestSkipped('Will be fixed after release of 1.9.0');
 		$pageUid = 1;
 
 		// Create new content elements:
@@ -1438,7 +1439,7 @@ class ApiTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 			'position' => 2
 		);
 
-		$this->backendUser->setWorkspace(-1);
+		$this->backendUser->setWorkspace(1);
 
 		$result = $this->api->deleteElement($sourcePointer);
 		self::assertTrue($result !== FALSE, 'deleteElement() returned FALSE!');
