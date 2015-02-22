@@ -20,10 +20,9 @@ before_script:
   - composer self-update
   - cd ..
   - cp templavoila/Build/composer.json .
-  - composer --dev install
+  - composer install
   - mkdir -p uploads typo3temp typo3conf/ext
   - mv templavoila typo3conf/ext/templavoila
-  - git clone https://github.com/typo3-ter/static_info_tables.git typo3conf/ext/static_info_tables
 
 script:
   - >
