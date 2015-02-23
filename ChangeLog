@@ -1,3 +1,15 @@
+1.9.3 / 2015-02-23
+==================
+
+  * [TASK] Enable unit testing in .travis.yml
+  * [TASK] Adjust composer.json for travis.ci
+  * [BUGFIX] illegal offset vDEF
+  * [BUGFIX] Insufficient array check
+  * [TASK] Fix failing functional tests
+  * [TASK] Completely remove folder "tests"
+  * [BUGFIX] Illegal string offset 'data' in tx_templavoila_pi1
+  * [TASK] Enable notifications of travis builds for slack
+
 2014-07-02 ------- [RELEASE] Release of templavoila 1.9.2
 2014-07-02 fb73422 [BUGFIX] Replace undefined variables with globals
 2014-07-02 925355f [BUGFIX] Temporarily make all methods public again
