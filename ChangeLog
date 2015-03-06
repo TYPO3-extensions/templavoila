@@ -1,3 +1,11 @@
+1.9.4 / 2015-03-06
+==================
+
+  * [BUGFIX] Regression: Replace usage of GeneralUtility
+  * [TASK] Move Build folder into Tests
+  * [TASK] Remove superfluous dependencies from composer.json
+  * [TASK] Improve .travis.yml build matrix
+
 1.9.3 / 2015-02-23
 ==================
 
