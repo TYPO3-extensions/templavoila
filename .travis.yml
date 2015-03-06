@@ -26,7 +26,7 @@ install:
 
 before_script:
   - cd ..
-  - cp templavoila/Build/composer.json .
+  - cp templavoila/Tests/Build/composer.json .
   - mkdir -p uploads typo3temp typo3conf/ext typo3_src
   - wget -O - "http://get.typo3.org/$TYPO3_VERSION" | tar -xzf - -C typo3_src --strip-components=1
   - ln -s typo3_src/index.php .
