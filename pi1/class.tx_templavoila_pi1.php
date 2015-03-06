@@ -717,7 +717,7 @@ class tx_templavoila_pi1 extends tslib_pibase {
 				$returnValue .= $dV[$valueKey];
 			}
 		} catch(\Exception $e) {
-			$this->log($e->getMessage(),  \TYPO3\CMS\Core\Utility\GeneralUtility::SYSLOG_SEVERITY_ERROR);
+			$this->log($e->getMessage(), \t3lib_div::SYSLOG_SEVERITY_ERROR);
 		}
 
 		return $returnValue;
