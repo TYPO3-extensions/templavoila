@@ -1,3 +1,8 @@
+1.9.5 / 2015-03-10
+==================
+
+  * [BUGFIX] Make sectionIndex aware of the "hide" flag
+
 1.9.4 / 2015-03-06
 ==================
 
