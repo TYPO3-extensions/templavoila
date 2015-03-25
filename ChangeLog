@@ -1,3 +1,9 @@
+1.9.7 / 2015-03-25
+==================
+
+  * [BUGFIX] Detect file type by extension instead of mime type
+  * [BUGFIX] Replace forgotten occurences of namespaced classes
+
 1.9.6 / 2015-03-13
 ==================
 
