@@ -105,7 +105,8 @@ class tx_templavoila_file {
 		try {
 			$file = self::file($filename);
 			if (!$file instanceof \TYPO3\CMS\Core\Resource\FolderInterface) {
-				$isXmlFile = in_array($file->getMimeType(), array('text/html', 'application/xml'));
+				$extension = strtolower($file->getExtension());
+				$isXmlFile = ($extension === 'html' || $extension === 'xml');
 			}
 		} catch (\Exception $e) {
 		}
