@@ -919,12 +919,12 @@ class tx_templavoila_pi1 extends tslib_pibase {
 
 	/**
 	 * @param string $message
-	 * @param int $severity \TYPO3\CMS\Core\Utility\GeneralUtility::SYSLOG_SEVERITY_* constant
+	 * @param int $severity \t3lib_div::SYSLOG_SEVERITY_* constant
 	 *
 	 * @return void
 	 */
 	public function log($message, $severity) {
-		\TYPO3\CMS\Core\Utility\GeneralUtility::sysLog($message, 'templavoila', $severity);
+		\t3lib_div::sysLog($message, 'templavoila', $severity);
 	}
 }
 
