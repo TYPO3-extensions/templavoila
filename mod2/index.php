@@ -14,9 +14,9 @@
 
 unset($MCONF);
 require(dirname(__FILE__) . '/conf.php');
-require($BACK_PATH . 'init.php');
-$LANG->includeLLFile('EXT:templavoila/mod2/locallang.xlf');
-$BE_USER->modAccess($MCONF, 1); // This checks permissions and exits if the users has no permission for entry.
+// require($BACK_PATH . 'init.php');
+$GLOBALS['LANG']->includeLLFile('EXT:templavoila/mod2/locallang.xlf');
+$GLOBALS['BE_USER']->modAccess($MCONF, 1); // This checks permissions and exits if the users has no permission for entry.
 
 /**
  * Module 'TemplaVoila' for the 'templavoila' extension.
