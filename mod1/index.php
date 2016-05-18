@@ -21,11 +21,10 @@
  */
 unset($MCONF);
 require(dirname(__FILE__) . '/conf.php');
-require($BACK_PATH . 'init.php');
-$LANG->includeLLFile('EXT:templavoila/mod1/locallang.xlf');
-$BE_USER->modAccess($MCONF, 1); // This checks permissions and exits if the users has no permission for entry.
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('cms', 1);
+// require($BACK_PATH . 'init.php');
+$GLOBALS['LANG']->includeLLFile('EXT:templavoila/mod1/locallang.xlf');
+$GLOBALS['BE_USER']->modAccess($MCONF, 1); // This checks permissions and exits if the users has no permission for entry.
+// TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('cms', 1);
 
 /**
  * Module 'Page' for the 'templavoila' extension.
@@ -584,7 +583,7 @@ class tx_templavoila_module1 extends \TYPO3\CMS\Backend\Module\BaseScriptClass {
 				var T3_TV_MOD1_RETURNURL = "' . rawurlencode(\TYPO3\CMS\Core\Utility\GeneralUtility::getIndpEnv('REQUEST_URI')) . '";
 			');
 
-			$this->doc->getPageRenderer()->loadPrototype();
+			//$this->doc->getPageRenderer()->loadPrototype();
 			$this->doc->getPageRenderer()->loadExtJs();
 			$this->doc->JScode .= $this->doc->wrapScriptTags('
 				var typo3pageModule = {
